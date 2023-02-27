@@ -71,39 +71,39 @@ module Pod
 
 
     # ---- modified methods ----
-    def add_pod_group(pod_name, path, development = false, absolute = false)
-        # copy from original
-        raise '[BUG]' if pod_group(pod_name)
-        parent_group = development ? development_pods : pods
-        # end of copy from original
+    # def add_pod_group(pod_name, path, development = false, absolute = false)
+    #     # copy from original
+    #     raise '[BUG]' if pod_group(pod_name)
+    #     parent_group = development ? development_pods : pods
+    #     # end of copy from original
 
-        if development
-            parent_group = get_parent_development_pod_group(pod_name, path)
-        end
+    #     if development
+    #         parent_group = get_parent_development_pod_group(pod_name, path)
+    #     end
         
-        # copy from original
-        source_tree = absolute ? :absolute : :group
-        group = parent_group.new_group(pod_name, path, source_tree)
-        group.setIsPodGroup true
-        group
-        # end of copy from original
-    end
+    #     # copy from original
+    #     source_tree = absolute ? :absolute : :group
+    #     group = parent_group.new_group(pod_name, path, source_tree)
+    #     group.setIsPodGroup true
+    #     group
+    #     # end of copy from original
+    # end
 
-    def pod_groups
-        def children(podGroup)
-            realGroups = podGroup.children.objects.select do |object|
-                object.isPodGroup         
-            end
-            folders = podGroup.children.objects.select do |object|
-                !object.isPodGroup         
-            end
-            folders.each do |folder|
-                realGroups.concat(children(folder))
-            end
-            return realGroups
-        end
-        pods.children.objects + children(development_pods)
-    end
+    # def pod_groups
+    #     def children(podGroup)
+    #         realGroups = podGroup.children.objects.select do |object|
+    #             object.isPodGroup         
+    #         end
+    #         folders = podGroup.children.objects.select do |object|
+    #             !object.isPodGroup         
+    #         end
+    #         folders.each do |folder|
+    #             realGroups.concat(children(folder))
+    #         end
+    #         return realGroups
+    #     end
+    #     pods.children.objects + children(development_pods)
+    # end
 
 
   end
