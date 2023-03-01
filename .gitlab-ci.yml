@@ -1,13 +1,3 @@
 include:
   - project: mobile-dev-platform/pipelines
     file: ruby-gem/main.yml
-
-stages:
-  - build
-  - test
-  - deploy
-
-test:
-  stage: test
-  script:
-    - echo 'ok'
