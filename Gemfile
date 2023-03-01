@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source('https://nexus.tcsbank.ru/repository/ruby-gems-group-repo')
 
 # Specify your gem's dependencies in cocoapods-developing-folder.gemspec
 gemspec

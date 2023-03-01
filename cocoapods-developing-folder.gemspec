@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['gaojiji@gmail.com']
   spec.description   = %q{a branch of tools for who heavily use development pods}
   spec.summary       = %q{a branch of tools for who heavily use development pods}
-  spec.homepage      = 'https://github.com/leavez/cocoapods-developing-folder'
+  # spec.homepage      = 'https://github.com/leavez/cocoapods-developing-folder'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($/)
